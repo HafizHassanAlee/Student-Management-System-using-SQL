@@ -1,4 +1,8 @@
+import os
 import psycopg
+from dotenv import load_dotenv
+
+load_dotenv()
 
 # ---------------- DATABASE CONNECTION ----------------
 
@@ -6,7 +10,7 @@ conn = psycopg.connect(
     host="localhost",
     dbname="students_database",
     user="postgres",
-    password="hassan92786",
+    password=os.getenv("DB_PASSWORD"),
     port=5432
 )
 
